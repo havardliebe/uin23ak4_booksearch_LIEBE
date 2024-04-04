@@ -30,6 +30,20 @@ body {
   min-height: 100vh;
 }
 
+ul {
+  list-style-type: none;
+}
+
+li {
+  text-align:left;
+  border: 5px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  border-color: #1a1a1a;
+  border-radius: 1px solid transparent;
+  outline: 4px auto -webkit-focus-ring-color
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

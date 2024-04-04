@@ -11,7 +11,7 @@ export default function SearchBar({ setSearchQuery, handleSearch }) {
     return (
         <div>
             <input type="text" value={query} onChange={handleChange} placeholder="Søk etter bok..." />
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch}>Søk</button>
         </div>
     );
 }

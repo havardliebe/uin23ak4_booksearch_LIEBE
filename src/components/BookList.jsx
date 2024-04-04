@@ -11,6 +11,7 @@ export default function BookList() {
                 setBooks(data.docs)
             
         };
+        
 
         fetchJamesBond()
     }, [])
@@ -20,11 +21,22 @@ export default function BookList() {
             <h2>James Bond Books</h2>
             <ul>
                 {books.map((book, index) => (
-                    <li key={index}>
-                        <strong>Title:</strong> {book.title}, <strong>Author:</strong> {book.author_name ? book.author_name.join(', ') : 'Unknown'}, <strong>Year:</strong> {book.publish_year}
+                    <li key={index} style={{ display: 'flex', alignItems: 'center' }}>
+                        {book.isbn && (
+                            <img src={`https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`} width="80" height="110" alt="Book cover" style={{ marginRight: '10px' }} />
+                        )}
+                        <div>
+                            <strong>Title:</strong> {book.title}<br />
+                            <strong>Author:</strong> {book.author_name ? book.author_name.join(', ') : 'Unknown'}<br />
+                            <strong>Year:</strong> {book.publish_year}<br />
+                            <strong>Rating:</strong> {book.ratings_average ? book.ratings_average : 'Unknown'}<br />
+                            <a href={`https://www.amazon.com/s?k=${book.title} ${book.author_name} book`} target="_blank" rel="noopener noreferrer">Søk i Amazon</a>
+                        </div>
                     </li>
                 ))}
             </ul>
         </div>
     );
+    
+    
 }
