@@ -5,16 +5,11 @@ export default function BookList() {
 
     useEffect(() => {
         const fetchJamesBond = async () => {
-            try {
                 const response = await fetch('https://openlibrary.org/search.json?q=James+Bond&has_fulltext=false&language=eng&person_facet=James+Bond+%28Fictitious+character%29')
-                if (!response.ok) {
-                    throw new Error('Failed to fetch data')
-                }
+                
                 const data = await response.json()
                 setBooks(data.docs)
-            } catch (error) {
-                console.error('Error fetching books:', error)
-            }
+            
         };
 
         fetchJamesBond()

@@ -10,17 +10,11 @@ function App() {
 
     const handleSearch = async () => {
         if (searchQuery.length < 3) {
-            alert('Søket må være på minst tre tegn.')
-            return
+          return alert('Søket må være på minst tre tegn.')
         }
-
-        try {
             const response = await fetch(`https://openlibrary.org/search.json?q=${searchQuery}&fields=title,first_publish_year,author,average_rating,amazon_id`)
             const data = await response.json()
             setSearchResults(data.docs)
-        } catch (error) {
-            console.error('Error fetching search results:', error)
-        }
     }
 
     return (
