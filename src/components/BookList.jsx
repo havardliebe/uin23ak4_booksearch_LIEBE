@@ -23,7 +23,7 @@ export default function BookList() {
                 {books.map((book, index) => (
                     <li key={index} style={{ display: 'flex', alignItems: 'center' }}>
                         {book.isbn && (
-                            <img src={`https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-L.jpg`} width="80" height="110" alt="Book cover" style={{ marginRight: '10px' }} />
+                            <img src={`https://covers.openlibrary.org/b/isbn/${book.isbn[0]}-S.jpg`} width="80" height="110" alt="Book cover" style={{ marginRight: '10px' }} />
                         )}
                         <div>
                             <strong>Title:</strong> {book.title}<br />

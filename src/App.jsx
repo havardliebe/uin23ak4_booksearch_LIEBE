@@ -18,11 +18,11 @@ function App() {
     }
 
     return (
-        <div>
+        <>
             <h1>Boksøk</h1>
             <SearchBar setSearchQuery={setSearchQuery} handleSearch={handleSearch} />
             {searchResults.length === 0 ? <BookList /> : <SearchResult searchResults={searchResults} />}
-        </div>
+        </>
     )
 }
 

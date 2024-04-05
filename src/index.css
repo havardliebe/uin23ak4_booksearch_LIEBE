@@ -40,6 +40,7 @@ li {
   padding-left: 5px;
   margin-bottom: 10px;
   border-color: #1a1a1a;
+  background-color: antiquewhite;
   border-radius: 1px solid transparent;
   outline: 4px auto -webkit-focus-ring-color
 }
